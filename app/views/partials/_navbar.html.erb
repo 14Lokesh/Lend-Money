@@ -1,0 +1,32 @@
+<div class = "navbar">
+  <div class = "nav-item">
+    <h3>Lend Money</h3>
+  </div>
+  <div class = "nav-item">
+    <ul>
+      <li> Home </li>
+      <li> About </li>
+      <li> Buy </li>
+      <%# binding.pry %>
+      <% if current_user.present? %>
+      <li> <%= button_to "Logout", session_path(current_user), method: :delete, class: "btn btn-link text-decoration-none text-reset" %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<style>
+  .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  }
+   .nav-item ul {
+  display: flex;
+  gap: 3rem;
+  }
+  .nav-item ul li{
+    list-style: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+</style>
