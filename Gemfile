@@ -47,6 +47,8 @@ gem 'sassc-rails'
 gem 'jquery-rails'
 gem 'rails-ujs'
 gem 'turbolinks', '~> 5'
+gem 'sidekiq'
+
 
 
 

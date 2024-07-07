@@ -10,3 +10,4 @@
 
 Rails.start()
 Turbolinks.start()
+

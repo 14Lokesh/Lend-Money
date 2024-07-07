@@ -1,13 +1,36 @@
 Rails.application.routes.draw do
-  resources :wallets
-  resources :users do
+  resources :loans do
+    collection do
+      get :rejected
+      get :open_loan
+
+    end
     member do
-      get :dashboard
+      get :requested_loan
+      get :pending_loan
     end
   end
-  resources :sessions
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  root "users#new"
+  resources :wallets
+
+  resources :users do
+    member do
+      post :confirm_loan
+      post :reject_loan
+    end
+  end
+
+  resources :sessions
+
+  resources :admins  do
+    collection do
+      get :active_loans
+      get :closed_loans
+    end
+    member do
+      post :reject_loan
+    end
+  end
+
+  root "users#home_page"
 end
