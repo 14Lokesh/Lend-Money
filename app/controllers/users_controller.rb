@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: %i[ reject_loan ]
+  before_action :require_user_logged_in, only: %i[ reject_loan confirm_loan show ]
   def index
   end
 
