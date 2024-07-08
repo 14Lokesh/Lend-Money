@@ -1,24 +1,13 @@
-# README
+Database -> Postgresql
+Rails Version -> 7.0.8
+Ruby Version -> 3.0.6
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ background Job -> Sidekiq
 
-Things you may want to cover:
+ Commands for running the application - 
+ 1. sudo service redis-server start
+ 2. bundle exec sidekiq
+ 3. rails s
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+In seed file admin and User are created  -> rails db:seed
+In config/database.yml, change the username and password for database
