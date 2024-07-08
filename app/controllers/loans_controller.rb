@@ -15,6 +15,7 @@ class LoansController < ApplicationController
     if @loan.save
       redirect_to new_loan_path, flash: { notice: 'Loan request created.' }
     else
+      flash[:notice] = "Something went wrong"
       render :new
     end
   end

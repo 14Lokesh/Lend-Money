@@ -10,6 +10,6 @@ class InterestCalculatorJob
     loan.amount += loan.amount * (loan.interest_rate / 100.0)
     loan.save!
     end
-    InterestCalculatorJob.perform_in(1.minute, loan_id)
+    InterestCalculatorJob.perform_in(5.minute, loan_id)
   end
 end

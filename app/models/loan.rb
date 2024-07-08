@@ -3,7 +3,7 @@ class Loan < ApplicationRecord
 
   belongs_to :user
 
-  validates :amount, presence: true
+  validates :amount, presence: true, numericality: true
 
   scope :requested, -> { where(state: "requested") }
   scope :closed_loans, ->(user_id) { where(user_id: user_id, state: "closed") }
